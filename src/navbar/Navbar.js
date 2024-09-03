@@ -17,10 +17,13 @@ export function Navbar() {
                         {/* <ul className="navbar-nav mb-2 mb-lg-0"> */}
                         <ul className="navbar-nav d-flex flex-row justify-content-between w-100 mb-2 mx-5 mb-lg-0"> {/* Use Flexbox to space items */}
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="#">Home</Link>
+                                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="#">Contact</Link>
+                                <Link className="nav-link" to="/contact-us">Contact</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/projects">Projects</Link>
                             </li>
                             {/* Add ms-auto to the Admin dropdown to push it to the right */}
                             <li className="nav-item dropdown ms-auto">
