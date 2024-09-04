@@ -1,50 +1,77 @@
 {
-    "projects": [
-      {
-        "id": 1,
-        "name": "Maxicon",
-        "start_date": "2022-02-02",
-        "team_lead": "John",
-        "members": 5,
-        "active": true,
-        "project_type": "internal"
-      },
-      {
-        "id": 2,
-        "name": "AlphaTech",
-        "start_date": "2023-05-15",
-        "team_lead": "Sarah",
-        "members": 8,
-        "active": false,
-        "project_type": "external"
-      },
-      {
-        "id": 3,
-        "name": "BetaSolutions",
-        "start_date": "2023-01-20",
-        "team_lead": "Michael",
-        "members": 6,
-        "active": true,
-        "project_type": "internal"
-      },
-      {
-        "id": 4,
-        "name": "GammaSystems",
-        "start_date": "2023-07-30",
-        "team_lead": "Emily",
-        "members": 4,
-        "active": false,
-        "project_type": "external"
-      },
-      {
-        "id": 5,
-        "name": "DeltaInnovations",
-        "start_date": "2024-03-10",
-        "team_lead": "Daniel",
-        "members": 7,
-        "active": true,
-        "project_type": "internal"
-      }
-    ]
-  }
-  
+  "projects": [
+    {
+      "id": 1,
+      "name": "Maxicon",
+      "start_date": "2022-02-02",
+      "team_lead": "John",
+      "members": 5,
+      "active": true,
+      "project_type": "internal"
+    },
+    {
+      "id": 2,
+      "name": "Alpha Pr",
+      "start_date": "2023-05-15",
+      "team_lead": "Sarah",
+      "members": "8",
+      "active": false,
+      "project_type": "internal",
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "name": "BetaSolutions",
+      "start_date": "2023-01-20",
+      "team_lead": "Michael",
+      "members": 6,
+      "active": true,
+      "project_type": "internal"
+    },
+    {
+      "id": 4,
+      "name": "GammaSystems",
+      "start_date": "2023-07-30",
+      "team_lead": "Emily",
+      "members": 4,
+      "active": false,
+      "project_type": "external"
+    },
+    {
+      "id": 5,
+      "name": "DeltaInnovations",
+      "start_date": "2024-03-10",
+      "team_lead": "Daniel",
+      "members": 7,
+      "active": true,
+      "project_type": "internal"
+    },
+    {
+      "name": "Connecto",
+      "start_date": "2024-08-29",
+      "team_lead": "Sonali",
+      "members": "15",
+      "status": "active",
+      "project_type": "internal",
+      "id": 6
+    },
+    {
+      "name": "OneThing",
+      "start_date": "2024-08-26",
+      "team_lead": "Jyoti",
+      "members": "4",
+      "status": "active",
+      "project_type": "internal",
+      "id": 7
+    },
+    {
+      "name": "Edited data",
+      "start_date": "2024-08-27",
+      "team_lead": "ew",
+      "members": "33",
+      "status": "inactive",
+      "project_type": "client",
+      "id": 9
+    }
+  ]
+}

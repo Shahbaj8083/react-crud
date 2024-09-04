@@ -12,7 +12,7 @@ export function Footer() {
 
     return (
         <React.Fragment>
-            <div className="border border-primary mt-5" style={{ height: '40px' }}>
+            <div className="border border-primary my-5 " style={{ height: '40px' }}>
                 <footer className="d-flex justify-content-center align-items-center h-100">
                     <p className="mb-0" id="copyright"></p>
                 </footer>
