@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { ProjectListMolecule } from "./ProjectList";
 
 export function Project() {
     const [content, setContent] = useState(<ProjectList showForm={showForm} />);
@@ -14,8 +15,6 @@ export function Project() {
     return (
         <div className="container my-5">
             {content}
-            {/* <ProjectList />
-            <ProjectForm /> */}
         </div>
     )
 }
@@ -41,23 +40,23 @@ function ProjectList(props) {
     async function fetchProjects(searchQuery = '', sort = 'asc') {
         const baseUrl = "http://localhost:4000/projects";
         let url = baseUrl;
-    
+
         // Build the query string
         const queryParams = new URLSearchParams();
-    
+
         if (searchQuery) {
             queryParams.append('q', searchQuery);
         }
-    
+
         if (sort) {
             queryParams.append('sort', sort);
         }
-    
+
         // Append query parameters to the base URL
         if (queryParams.toString()) {
             url += `?${queryParams.toString()}`;
         }
-    
+
         try {
             const response = await fetch(url);
             if (!response.ok) {
@@ -70,134 +69,17 @@ function ProjectList(props) {
             console.error(error.message);
         }
     }
-    
+
     return (
         <div className="container my-5">
-            <div className="d-flex justify-content-between align-items-center mb-4">
-                <h2 className="mb-2">Projects</h2>
-
-                <div className="col-md-4 d-flex justify-content-center">
-                    <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Search..."
-                        onChange={(e) => fetchProjects(e.target.value)} // Replace with your search logic
-                    />
-                </div>
-                <div>
-                    <button
-                        type="button"
-                        className={`btn ${viewMode === 'card' ? 'btn-secondary' : 'btn-outline-secondary'} me-2`}
-                        onClick={() => setViewMode('card')}
-                    >
-                        Card View
-                    </button>
-                    <button
-                        type="button"
-                        className={`btn ${viewMode === 'list' ? 'btn-secondary' : 'btn-outline-secondary'}`}
-                        onClick={() => setViewMode('list')}
-                    >
-                        List View
-                    </button>
-                </div>
-            </div>
-            <div className="d-flex justify-content-center mb-4">
-                <button
-                    type="button"
-                    className="btn btn-primary me-2"
-                    onClick={() => props.showForm({})}
-                >
-                    Create
-                </button>
-                <button
-                    type="button"
-                    className="btn btn-outline-primary me-2"
-                    onClick={() => fetchProjects()}
-                >
-                    Refresh
-                </button>
-
-            </div>
-            {viewMode === 'card' ? (
-                <div className="row">
-                    {projects.map((project, index) => (
-                        <div className="col-md-3 mb-4" key={index}>
-                            <div className="card h-100">
-                                <img
-                                    src={`https://via.placeholder.com/150?text=${project.name}`} // Placeholder image URL
-                                    className="card-img-top"
-                                    alt={`${project.name} logo`}
-                                />
-                                <div className="card-body">
-                                    <h5 className="card-title">{project.name}</h5>
-                                    <p className="card-text">
-                                        <strong>ID:</strong> {project.id}<br />
-                                        <strong>Start Date:</strong> {project.start_date}<br />
-                                        <strong>Team Lead:</strong> {project.team_lead}<br />
-                                        <strong>Status:</strong> {project.active}
-                                    </p>
-                                    <div className="d-flex justify-content-between">
-                                        <button
-                                            onClick={() => props.showForm(project)}
-                                            type="button"
-                                            className="btn btn-primary btn-sm"
-                                        >
-                                            Edit
-                                        </button>
-                                        <button
-                                            onClick={() => deleteProject(project.id)}
-                                            type="button"
-                                            className="btn btn-danger btn-sm"
-                                        >
-                                            Delete
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            ) : (
-                <table className="table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Start Date</th>
-                            <th>Team Lead</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {projects.map((project, index) => (
-                            <tr key={index}>
-                                <td>{project.id}</td>
-                                <td>{project.name}</td>
-                                <td>{project.start_date}</td>
-                                <td>{project.team_lead}</td>
-                                <td>{project.active}</td>
-                                <td>
-                                    <button
-                                        onClick={() => props.showForm(project)}
-                                        type="button"
-                                        className="btn btn-primary btn-sm me-2"
-                                    >
-                                        Edit
-                                    </button>
-                                    <button
-                                        onClick={() => deleteProject(project.id)}
-                                        type="button"
-                                        className="btn btn-danger btn-sm"
-                                    >
-                                        Delete
-                                    </button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            )}
+            <ProjectListMolecule
+                projects={projects}
+                viewMode={viewMode}
+                setViewMode={setViewMode}
+                deleteProject={deleteProject}
+                fetchProjects={fetchProjects}
+                showForm={props.showForm}
+            />
         </div>
     );
 }

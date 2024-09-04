@@ -7,7 +7,8 @@
       "team_lead": "John",
       "members": 5,
       "active": true,
-      "project_type": "internal"
+      "project_type": "internal",
+      "logo": "/logo/Mx.jpg"
     },
     {
       "id": 2,
@@ -17,7 +18,7 @@
       "members": "8",
       "active": false,
       "project_type": "internal",
-      "status": "active"
+      "logo": "/logo/A.jpg"
     },
     {
       "id": 3,
@@ -26,7 +27,8 @@
       "team_lead": "Michael",
       "members": 6,
       "active": true,
-      "project_type": "internal"
+      "project_type": "internal",
+      "logo": "/logo/B.jpg"
     },
     {
       "id": 4,
@@ -35,7 +37,8 @@
       "team_lead": "Emily",
       "members": 4,
       "active": false,
-      "project_type": "external"
+      "project_type": "external",
+      "logo": "/logo/G.jpg"
     },
     {
       "id": 5,
@@ -44,7 +47,8 @@
       "team_lead": "Daniel",
       "members": 7,
       "active": true,
-      "project_type": "internal"
+      "project_type": "internal",
+      "logo": "/logo/D.jpg"
     },
     {
       "name": "Connecto",
@@ -53,7 +57,8 @@
       "members": "15",
       "status": "active",
       "project_type": "internal",
-      "id": 6
+      "id": 6,
+      "logo": "/logo/C.jpg"
     },
     {
       "name": "OneThing",
@@ -62,15 +67,25 @@
       "members": "4",
       "status": "active",
       "project_type": "internal",
-      "id": 7
+      "id": 7,
+      "logo": "/logo/o.jpg"
     },
     {
-      "name": "Edited data",
-      "start_date": "2024-08-27",
-      "team_lead": "ew",
-      "members": "33",
+      "name": "Molecule",
+      "start_date": "2024-09-03",
+      "team_lead": "dd",
+      "members": "6",
       "status": "inactive",
       "project_type": "client",
+      "id": 8
+    },
+    {
+      "name": "final",
+      "start_date": "2024-08-27",
+      "team_lead": "rrr",
+      "members": "44",
+      "status": "inactive",
+      "project_type": "internal",
       "id": 9
     }
   ]
