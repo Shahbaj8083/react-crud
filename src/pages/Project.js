@@ -30,11 +30,19 @@ function ProjectList(props) {
     }, [])
 
     function deleteProject(id) {
-        fetch(url + id, {
-            method: "DELETE",
-        })
+        // Show confirmation dialog
+        if (window.confirm("Are you sure you want to delete this project?")) {
+            // User confirmed
+            fetch(url + id, {
+                method: "DELETE",
+            })
             .then((response) => response.json())
-            .then((data) => fetchProjects());
+            .then(() => fetchProjects())
+            .catch((error) => console.error("Error deleting project:", error));
+        } else {
+            // User canceled
+            console.log("Project deletion canceled.");
+        }
     }
 
     async function fetchProjects(searchQuery = '', sort = 'asc') {

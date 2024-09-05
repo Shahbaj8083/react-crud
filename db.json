@@ -59,15 +59,6 @@
       "project_type": "internal",
       "id": 7,
       "logo": "/logo/o.jpg"
-    },
-    {
-      "name": "Final Project",
-      "start_date": "2024-09-04",
-      "team_lead": "Shahbaj",
-      "members": "5",
-      "status": "active",
-      "project_type": "client",
-      "id": 8
     }
   ]
 }
