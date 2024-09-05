@@ -1,7 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export function Navbar() {
+
+    const isAuthenticated = !!sessionStorage.getItem('authToken');
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        // Remove token from sessionStorage
+        sessionStorage.removeItem('authToken');
+        navigate("/");
+    };
+
     return (
         <React.Fragment>
             <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: '#e3f2fd' }}>
@@ -25,16 +34,24 @@ export function Navbar() {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/projects">Projects</Link>
                             </li>
-                            {/* Add ms-auto to the Admin dropdown to push it to the right */}
-                            <li className="nav-item dropdown ms-auto">
-                                <Link className="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Admin
-                                </Link>
-                                <ul className="dropdown-menu">
-                                    <li><Link className="dropdown-item" to="#">Profile</Link></li>
-                                    <li><Link className="dropdown-item" to="#">Logout</Link></li>
-                                </ul>
-                            </li>
+                            {isAuthenticated ? (
+                                // Show Admin dropdown with Logout option if authenticated
+                                <li className="nav-item dropdown ms-auto">
+                                    <Link className="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Admin
+                                    </Link>
+                                    <ul className="dropdown-menu">
+                                        <li><Link className="dropdown-item" to="#">Profile</Link></li>
+                                        <li><button className="dropdown-item" onClick={handleLogout}>Logout</button></li>
+                                    </ul>
+                                </li>
+                            ) : (
+                                // Show Login link if not authenticated
+                                <li className="nav-item ms-auto">
+                                    <Link className="nav-link" to="/login">Login</Link>
+                                </li>
+                            )}
+
                         </ul>
                     </div>
                 </div>

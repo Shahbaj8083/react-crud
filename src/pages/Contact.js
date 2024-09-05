@@ -1,4 +1,3 @@
-import { dblClick } from "@testing-library/user-event/dist/click";
 import React from "react";
 
 export function ContactUs() {

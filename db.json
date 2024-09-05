@@ -1,16 +1,6 @@
 {
   "projects": [
     {
-      "id": 1,
-      "name": "Maxicon",
-      "start_date": "2022-02-02",
-      "team_lead": "John",
-      "members": 5,
-      "active": true,
-      "project_type": "internal",
-      "logo": "/logo/Mx.jpg"
-    },
-    {
       "id": 2,
       "name": "Alpha Pr",
       "start_date": "2023-05-15",
@@ -71,22 +61,13 @@
       "logo": "/logo/o.jpg"
     },
     {
-      "name": "Molecule",
-      "start_date": "2024-09-03",
-      "team_lead": "dd",
-      "members": "6",
-      "status": "inactive",
+      "name": "Final Project",
+      "start_date": "2024-09-04",
+      "team_lead": "Shahbaj",
+      "members": "5",
+      "status": "active",
       "project_type": "client",
       "id": 8
-    },
-    {
-      "name": "final",
-      "start_date": "2024-08-27",
-      "team_lead": "rrr",
-      "members": "44",
-      "status": "inactive",
-      "project_type": "internal",
-      "id": 9
     }
   ]
 }

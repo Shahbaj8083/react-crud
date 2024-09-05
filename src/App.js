@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ContactUs } from './pages/Contact';
 import { NotFound } from './pages/NotFound';
 import { Project } from './pages/Project';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contact-us" element= {<ContactUs/>} />
         <Route path="/projects" element= {<Project/>} />
+        <Route path="/login" element= {<Login />} />
         <Route path="/*" element= {<NotFound/>} />
       </Routes>
       <Footer />
